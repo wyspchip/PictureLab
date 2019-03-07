@@ -13,8 +13,7 @@ import java.util.List; // resolves problem with java.awt.List and java.util.List
  * 
  * @author Barbara Ericson ericson@cc.gatech.edu
  */
-public class Picture extends SimplePicture 
-{
+public class Picture extends SimplePicture {
   ///////////////////// constructors //////////////////////////////////
   
   /**
@@ -97,6 +96,16 @@ public class Picture extends SimplePicture
       }
     }
   }
+  
+  public void keepOnlyBlue() {
+      Pixel[][] pixels = this.getPixels2D();
+      for (Pixel[] row : pixels) {
+          for (Pixel pixel : row) {
+              pixel.setRed(0);
+              pixel.setGreen(0);
+            }
+        }
+    }
   
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
