@@ -52,9 +52,39 @@ public class PictureTester
   }
   
   public static void testKeepOnlyBlue() {
-      Picture cavestory = new Picture("balrog.jfif");
+      Picture cavestory = new Picture("cavestory.jpg");
       cavestory.keepOnlyBlue();
       cavestory.explore();
+    }
+    
+   public static void testKeepOnlyRed() {
+       Picture cavestory = new Picture("cavestory.jpg");
+       cavestory.keepOnlyRed();
+       cavestory.explore();
+    }
+    
+   public static void testKeepOnlyGreen() {
+       Picture cavestory = new Picture("cavestory.jpg");
+       cavestory.keepOnlyGreen();
+       cavestory.explore();
+    }
+    
+   public static void testNegate() {
+       Picture cavestory = new Picture("cavestory.jpg");
+       cavestory.negate();
+       cavestory.explore();
+    }
+    
+   public static void testGrayscale() {
+       Picture cavestory = new Picture("cavestory.jpg");
+       cavestory.grayscale();
+       cavestory.explore();
+    }
+    
+   public static void testFixUnderwater() {
+       Picture water = new Picture("water.jpg");
+       water.fixUnderwater();
+       water.explore();
     }
   
   /** Main method for testing.  Every class can have a main
@@ -66,11 +96,11 @@ public class PictureTester
     // to run
     testZeroBlue();
     testKeepOnlyBlue();
-    //testKeepOnlyRed();
-    //testKeepOnlyGreen();
-    //testNegate();
-    //testGrayscale();
-    //testFixUnderwater();
+    testKeepOnlyRed();
+    testKeepOnlyGreen();
+    testNegate();
+    testGrayscale();
+    testFixUnderwater();
     testMirrorVertical();
     testMirrorTemple();
     //testMirrorArms();
