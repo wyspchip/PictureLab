@@ -18,13 +18,31 @@ public class PictureTester
   }
   
   /** Method to test mirrorVertical */
-  public static void testMirrorVertical()
-  {
+  public static void testMirrorVertical() {
     Picture caterpillar = new Picture("caterpillar.jpg");
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
   }
+  
+  public static void testMirrorVerticalRightToLeft() {
+      Picture caterpillar = new Picture("caterpillar.jpg");
+      caterpillar.mirrorVerticalRightToLeft();
+      caterpillar.explore();
+    }
+    
+   public static void testMirrorHorizontal() {
+       Picture cavestory = new Picture("cavestory.jpg");
+       cavestory.mirrorHorizontal();
+       cavestory.explore();
+    }
+    
+   public static void testMirrorHorizontalBotToTop() {
+       Picture cavestory = new Picture("cavestory.jpg");
+       //cavestory.mirrorHorizontalBotToTop();
+       cavestory.explore();
+    }
+    
   
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
@@ -89,8 +107,7 @@ public class PictureTester
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
-  public static void main(String[] args)
-  {
+  public static void main(String[] args) {
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
@@ -102,6 +119,9 @@ public class PictureTester
     testGrayscale();
     testFixUnderwater();
     testMirrorVertical();
+    testMirrorVerticalRightToLeft();
+    testMirrorHorizontal();
+    testMirrorHorizontalBotToTop();
     testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
