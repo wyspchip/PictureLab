@@ -234,9 +234,9 @@ public class Picture extends SimplePicture {
   
   public void mirrorArms() {
       Pixel[][] image = this.getPixels2D();
-      int mirrorPoint = 195;
+      int mirrorPoint = 194;
       Pixel botPixel, topPixel;
-      for (int row = 165; row < 193; row++) {
+      for (int row = 165; row < 190; row++) {
           for (int col = 100; col < 297; col++) {
               topPixel = image[row][col];
               botPixel = image[mirrorPoint-row+mirrorPoint][col];
@@ -285,10 +285,34 @@ public class Picture extends SimplePicture {
       }
     }   
   }
+  
+    public void copy(Picture fromPic, 
+                 int startRow, int startCol,
+                 int fSR,      int fSC,
+                 int fER,      int fEC){
+    Pixel fromPixel = null;
+    Pixel toPixel = null;
+    Pixel[][] toPixels = this.getPixels2D();
+    Pixel[][] fromPixels = fromPic.getPixels2D();
+    for (int fromRow = fSR, toRow = startRow; 
+         fromRow < fER &&
+         toRow < toPixels.length; 
+         fromRow++, toRow++)
+    {
+      for (int fromCol = fSC, toCol = startCol; 
+           fromCol < fEC &&
+           toCol < toPixels[0].length;  
+           fromCol++, toCol++)
+      {
+        fromPixel = fromPixels[fromRow][fromCol];
+        toPixel = toPixels[toRow][toCol];
+        toPixel.setColor(fromPixel.getColor());
+      }
+    }   
+  }
 
   /** Method to create a collage of several pictures */
-  public void createCollage()
-  {
+  public void createCollage() {
     Picture flower1 = new Picture("flower1.jpg");
     Picture flower2 = new Picture("flower2.jpg");
     this.copy(flower1,0,0);
@@ -299,6 +323,19 @@ public class Picture extends SimplePicture {
     this.copy(flowerNoBlue,300,0);
     this.copy(flower1,400,0);
     this.copy(flower2,500,0);
+    this.mirrorVertical();
+    this.write("collage.jpg");
+  }
+  
+  public void myCollage() {
+    Picture balrog1 = new Picture("balrog.jfif");
+    Picture balrog2 = new Picture("balrog.jfif");
+    Picture balrogMirror = new Picture("balrog.jfif");
+    balrogMirror.mirrorVertical();
+    this.copy(balrog1,0,0);
+    this.copy(balrogMirror,100,0);
+    this.copy(balrog1,200,0);
+    this.copy(balrog2,200,0);
     this.mirrorVertical();
     this.write("collage.jpg");
   }

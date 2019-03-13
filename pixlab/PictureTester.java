@@ -6,7 +6,7 @@
  * 
  * @author Barbara Ericson 
  */
-public class PictureTester
+public class PictureTester extends Picture
 {
   /** Method to test zeroBlue */
   public static void testZeroBlue()
@@ -26,32 +26,31 @@ public class PictureTester
   }
   
   public static void testMirrorVerticalRightToLeft() {
-      Picture caterpillar = new Picture("caterpillar.jpg");
-      caterpillar.mirrorVerticalRightToLeft();
-      caterpillar.explore();
+      Picture hk = new Picture("hk.png");
+      hk.mirrorVerticalRightToLeft();
+      hk.explore();
     }
     
    public static void testMirrorHorizontal() {
-       Picture cavestory = new Picture("cavestory.jpg");
-       cavestory.mirrorHorizontal();
-       cavestory.explore();
+       Picture hk = new Picture("hk.png");
+       hk.mirrorHorizontal();
+       hk.explore();
     }
     
    public static void testMirrorHorizontalBotToTop() {
-       Picture cavestory = new Picture("cavestory.jpg");
-       cavestory.mirrorHorizontalBotToTop();
-       cavestory.explore();
+       Picture hk = new Picture("hk.png");
+       hk.mirrorHorizontalBotToTop();
+       hk.explore();
     }
    
    public static void testMirrorDiagonal() {
-       Picture beach = new Picture("beach.jpg");
-       beach.mirrorDiagonal();
-       beach.explore();
+       Picture cavestory = new Picture("cavestory.png");
+       cavestory.mirrorDiagonal();
+       cavestory.explore();
     }
   
   /** Method to test mirrorTemple */
-  public static void testMirrorTemple()
-  {
+  public static void testMirrorTemple() {
     Picture temple = new Picture("temple.jpg");
     temple.explore();
     temple.mirrorTemple();
@@ -76,6 +75,12 @@ public class PictureTester
     canvas.createCollage();
     canvas.explore();
   }
+  
+  public static void testMyCollage() {
+      Picture canvas = new Picture ("hk.png");
+      canvas.myCollage();
+      canvas.explore();
+    }
   
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
@@ -143,6 +148,7 @@ public class PictureTester
     testMirrorGull();
     testMirrorDiagonal();
     testCollage();
+    testMyCollage();
     //testCopy();
     testEdgeDetection();
     //testEdgeDetection2();
