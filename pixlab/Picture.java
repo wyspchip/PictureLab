@@ -308,9 +308,11 @@ public class Picture extends SimplePicture {
         toPixel = toPixels[toRow][toCol];
         toPixel.setColor(fromPixel.getColor());
       }
-    }   
+    }
   }
-
+  
+  
+  
   /** Method to create a collage of several pictures */
   public void createCollage() {
     Picture flower1 = new Picture("flower1.jpg");
@@ -328,14 +330,16 @@ public class Picture extends SimplePicture {
   }
   
   public void myCollage() {
-    Picture balrog1 = new Picture("balrog.jfif");
-    Picture balrog2 = new Picture("balrog.jfif");
-    Picture balrogMirror = new Picture("balrog.jfif");
-    balrogMirror.mirrorVertical();
-    this.copy(balrog1,0,0);
-    this.copy(balrogMirror,100,0);
-    this.copy(balrog1,200,0);
-    this.copy(balrog2,200,0);
+    Picture balrog = new Picture("balrog.jfif");
+    Picture cavestory = new Picture("cavestory.png");
+    this.copy(balrog,0,0);
+    balrog.mirrorVertical();
+    this.copy(balrog,230,100);
+    balrog.mirrorHorizontalBotToTop();
+    this.copy(balrog,500,500);
+    balrog.mirrorHorizontal();
+    cavestory.mirrorDiagonal();
+    this.copy(cavestory,800,500);
     this.mirrorVertical();
     this.write("collage.jpg");
   }

@@ -6,7 +6,7 @@
  * 
  * @author Barbara Ericson 
  */
-public class PictureTester extends Picture
+public class PictureTester
 {
   /** Method to test zeroBlue */
   public static void testZeroBlue()
@@ -125,6 +125,13 @@ public class PictureTester extends Picture
        water.fixUnderwater();
        water.explore();
     }
+    
+   public static void testCopy() {
+       Picture ocean = new Picture("beach.jpg");
+       Picture daddy = new Picture("snowman.jpg");
+       ocean.copy(daddy, 10, 10, 60, 160, 180, 220);
+       ocean.explore();
+    }
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -149,7 +156,7 @@ public class PictureTester extends Picture
     testMirrorDiagonal();
     testCollage();
     testMyCollage();
-    //testCopy();
+    testCopy();
     testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
