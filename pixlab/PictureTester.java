@@ -83,11 +83,19 @@ public class PictureTester
     }
   
   /** Method to test edgeDetection */
-  public static void testEdgeDetection()
-  {
-    Picture swan = new Picture("swan.jpg");
-    swan.edgeDetection(10);
-    swan.explore();
+  public static void testEdgeDetection() {
+    Picture hk = new Picture("hk.png");
+    Picture tetrisheart = new Picture("tetrisheart.jpg");
+    Picture tetrissplash = new Picture("tetrissplash.jpg");
+    Picture cavestory = new Picture("cavestory.jpg");
+    hk.edgeDetection(20);
+    tetrisheart.edgeDetection(10);
+    tetrissplash.edgeDetection(30);
+    cavestory.edgeDetection(17);
+    hk.explore();
+    tetrisheart.explore();
+    tetrissplash.explore();
+    cavestory.explore();
   }
   
   public static void testKeepOnlyBlue() {
